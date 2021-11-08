@@ -7,7 +7,7 @@ import Movie from "./Movies/Movie";
 import MovieList from "./Movies/MovieList";
 
 export default function App() {
-  const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
+  // const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function App() {
         .get("http://localhost:5000/api/movies") // Study this endpoint with Postman
         .then((response) => {
           setMovieList(response.data);
+          // console.log(response.data);
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
         })
@@ -26,9 +27,9 @@ export default function App() {
     getMovies();
   }, []);
 
-  const addToSavedList = (id) => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
-  };
+  // const addToSavedList = (id) => {
+  //   This is stretch. Prevent the same movie from being "saved" more than once
+  // };
 
   return (
     <div>
@@ -43,7 +44,7 @@ export default function App() {
         <Route path='/movies/:id'>
           <Movie />
         </Route>
-        <Route exact path='/'>
+        <Route path='/'>
           <MovieList movies={movieList} />
         </Route>
       </Switch>

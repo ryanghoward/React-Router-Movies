@@ -13,7 +13,9 @@ export default function SavedList(props) {
       {props.list.map((movie) => (
         <span className='saved-movie'>{movie.title}</span>
       ))}
-      <div className='home-button'>Home</div>
+      <div onClick={routeToHome} className='home-button'>
+        Home
+      </div>
     </div>
   );
 }
