@@ -43,10 +43,9 @@ export default function App() {
           <Movie />
         </Route>
         <Route exact path='/'>
-          <MovieList />
+          <MovieList movies={movieList} />
         </Route>
       </Switch>
-      <div>Replace this Div with your Routes</div>
     </div>
   );
 }
